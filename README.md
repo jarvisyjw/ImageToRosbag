@@ -1,27 +1,33 @@
-# BagFromImages
+# ImageToBag
+Modified from https://github.com/keenan-burnett/BagFromImages.git
+Originally from https://github.com/raulmur/BagFromImages.git
 
-ROS package to generate a rosbag from a collection of images. Images are ordered alphabetically. The timestamp for each image is assigned according to the specified frequency. 
+ROS package to generate a rosbag from a collection of images. The filenames of the images are the timestamps of each of the image. TODO: *And later on will developed a version that supports the alpabetically ordered images under a fixed frequency.*
 
-The bag will publish the images to topic `/camera/image_raw`.
+The bag will publish the images to topic `/image_seg/compressed`. TODO:*can be set in the launch file.*
 
-Tested in ROS Kinetic + OpenCV 3.3.1 + C++ 11
+Tested in ROS Melodic + OpenCV 3.2.0 + C++ 11
 
 ## Installation
 
-In your ROS_PACKAGE_PATH (check your environment variable ROS_PACKAGE_PATH):
-
     mkdir -p /catkin_ws/src
     cd /catkin/src
-    git clone https://github.com/keenan-burnett/BagFromImages.git
+    git clone https://github.com/Jarvis-sustech/ImageToRosbag.git
     cd ..
     catkin build
 
 ## Usage:
 
-    rosrun BagFromImages main PATH_TO_VEC_FILE FREQUENCY PATH_TO_OUPUT_BAG
+    rosrun BagFromImages main [PATH_OF_FOLDER_IMAGES] [EXT._OF_IMAGE] [PATH_TO_OUPUT_BAG]
   
- - `PATH_TO_VEC_FILE`: Path to a .dat file while contains the absolute path of each image, one per line
- - `FREQUENCY`: Frames per second.
+ - `PATH_OF_FOLDER_IMAGES`: Path to folder that contains image sequences.
+ - `EXT._OF_IMAGE`: eg. ".png", ".jpg".
  - `PATH_TO_OUTPUT_BAG`: Path to save the bag (including the filename e.g. directory/filename.bag)
 
-# ImageToRosbag
+## Notes:
+- Be sure to set the correct path of the OPENCV of your installation. And input at the CMakeLists.txt
+    set(OpenCV_DIR /usr/share/OpenCV)
+Also, in this package, we use the cv_brigde to compressed image, therefore save the space for a RosBag.
+
+
+

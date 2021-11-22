@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>BagFromImages</name>
+  <name>ImageToBag</name>
   <version>0.0.0</version>
-  <description>The bag package</description>
+  <description>Generate rosbag from image sequence</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
   <!-- <maintainer email="jane.doe@example.com">Jane Doe</maintainer> -->
-  <maintainer email="keenan@todo.todo">keenan</maintainer>
+  <maintainer email="11710414@mail.sustech.edu.cn">Jarvis</maintainer>
 
 
   <!-- One license tag required, multiple allowed, one license per tag -->
