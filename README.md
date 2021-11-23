@@ -1,5 +1,6 @@
 # ImageToBag
 Modified from https://github.com/keenan-burnett/BagFromImages.git
+
 Originally from https://github.com/raulmur/BagFromImages.git
 
 ROS package to generate a rosbag from a collection of images. The filenames of the images are the timestamps of each of the image. TODO: *And later on will developed a version that supports the alpabetically ordered images under a fixed frequency.*
@@ -26,7 +27,9 @@ Tested in ROS Melodic + OpenCV 3.2.0 + C++ 11
 
 ## Notes:
 - Be sure to set the correct path of the OPENCV of your installation. And input at the CMakeLists.txt
+    
     set(OpenCV_DIR /usr/share/OpenCV)
+
 Also, in this package, we use the cv_brigde to compressed image, therefore save the space for a RosBag.
 
 
